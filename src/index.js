@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import Auth from 'j-toker'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { apiUrl, baseUrl } from './app/_CONSTANTS'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+Auth.configure({
+  apiUrl: apiUrl,
+  passwordResetSuccessUrl: function() {
+    return `${baseUrl}/account/reset-password`;
+  },
+}).always(function() {
+  ReactDOM.render(<App />, document.getElementById('app'));
+
+  serviceWorker.unregister();
+});

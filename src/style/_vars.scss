@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,600|Montserrat:400,600');
+
+$text-sans: "Lato",Helvetica Neue,Helvetica,Arial,sans-serif;
+$text-serif: Georgia,serif;
+$text-display: "Montserrat",Georgia,serif;
+$text-flourish: Baskerville,"baskerville-urw",Georgia,serif;
+
+// Colors
+$color-white-true: #ffffff;
+$color-black-true: #000000;
+
+$color-white: #fdfdfd;
+$color-white-grey: #fcfcfc;
+$color-white-yellow: #fefefb;
+$color-grey-white: #fafaf8;
+$color-grey-lightest: #f8f8f7;
+$color-grey-lighter: #eeeeee;
+$color-grey-light: #E5E2E2;
+$color-grey-medium: #ABABAB;
+$color-grey-dark: #777777;
+$color-grey-off: #5b5e6d;
+$color-grey-darker: #404040;
+$color-grey-black: #333333;
+$color-black: #231f20;
+
+$color-aqua: #43C0F6;
+$color-blue: #019cea;
+$color-blue-dark: #0389d6;
+$color-blue-light: #e1f5ff;
+$color-papaya: #E24E42;
+$color-mint: #00c23b;
+$color-mustard: #E9B000;
+$color-honey: #DCAE1D;
+$color-blush: #EB6E80;
+$color-peach: #EDDBCD;
+$color-ochre: #C06014;
+
+$color-orange: #ea5001;
+$color-red: #ff0d00;
+$color-baby: #A5EDFF;
+$color-bark: #6E0004;
+
+//Abstracted colors
+$color-background-default: $color-white-grey;
+$color-background-highlight: $color-grey-lighter;
+$color-background-featured: $color-blue-light;
+
+$color-text-default: $color-grey-black;
+$color-text-highlight: $color-black;
+$color-text-lowlight: $color-black;
+$color-text-muted: $color-grey-dark;
+$color-text-emphasis: $color-white;
+
+//Font and padding styles follow Augmented Fourth scale
+$em: 16px;
+
+$em-xxxxs: .088375*$em;  // 1.414px
+$em-xxxs: .17675*$em;    // 2.828px
+$em-xxs: .3535*$em;      // 5.656px
+$em-xs: .5*$em;          // 8px
+$em-s: .707*$em;         // 11.312px
+$em-m: .85*$em;         // 13.6px
+
+$em-m-l: 1.25*$em;       // 20px
+$em-l: 1.414*$em;        // 22.624px
+$em-xl: 1.999*$em;       // 31.984px
+$em-xxl: 2.121*$em;      // 33.936px
+$em-xxxl: 2.828*$em;      // 45.248px
+$em-xxxxl: 4.242*$em;      // 45.248px
+
+$xs: 10*$em;             // 160px
+$s: 20*$em;              // 320px
+$s-m: 30*$em;            // 480px
+$m: 40*$em;              // 640px
+$m-l: 50*$em;            // 800px
+$l: 60*$em;              // 960px
+$l-xl: 64*$em;           // 1024px
+$xl: 80*$em;             // 1280px
+$xxl: 90*$em;            // 1440px
+
+$xs-padded: 8*$em;       // 160px-32px = 128px
+$s-padded: 18*$em;       // 320px-32px=288px
+$s-m-padded: 28*$em;     // 480px-32px=448px
+$m-padded: 38*$em;       // 640px-32px=608px
+$m-l-padded: 48*$em;     // 800px-32px=768px
+$l-padded: 58*$em;       // 960px-32px=928px
+$l-xl-padded: 62*$em;    // 1024px-32px=992px
+$xl-padded: 78*$em;      // 1280px-32px=1248px
+$xxl-padded: 88*$em;     // 1440px-32px=1408px
+
+$xs-double-padded: 6*$em;     // 160px-64px = 96px
+$s-double-padded: 14*$em;     // 320px-64px=256px
+$s-m-double-padded: 26*$em;   // 480px-64px=416px
+$m-double-padded: 36*$em;     // 640px-64px=576px
+$m-l-double-padded: 46*$em;   // 800px-64px=736px
+$l-double-padded: 56*$em;     // 960px-64px=896px
+$l-xl-double-padded: 60*$em;  // 1024px-64px=960px
+$xl-double-padded: 76*$em;    // 1280px-64px=1216px
+$xxl-double-padded: 86*$em;   // 1440px-64px=1376px
+
+
+// Other effects
+$transition-standard: 1.6s;
+$transition-delayed: .9s;
+$transition-short: .3s;
+$transition-instant: .1s;
+
+$shadow-standard: 0 3px 5px -4px transparentize(#1a1919,.5);
+$shadow-highlight: 0 4px 6px -4px transparentize(#1a1919,.5);
+
+// Z-indicies
+$z-background: -10;
+$z-unstack: -1;
+$z-stack: 1;
+$z-foreground: 2;
+$z-nav-overlay: 9;
+$z-nav: 10;
+$z-header: 11;
+$z-header-overlay: 12;
+$z-lightbox-overlay: 99;
+$z-lightbox: 100;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin display($a) {
+  display: $a;
+}
+@mixin flex-direction($a) {
+  -moz-flex-direction: $a;
+  -ms-flex-direction: $a;
+  -webkit-flex-direction: $a;
+  flex-direction: $a;
+}
+@mixin flex-wrap($a) {
+  -moz-flex-wrap: $a;
+  -ms-flex-wrap: $a;
+  -webkit-flex-wrap: $a;
+  flex-wrap: $a;
+}
+@mixin align-content($a) {
+  align-content: $a;
+}
+@mixin align-items($a) {
+  -moz-align-items: $a;
+  -webkit-align-items: $a;
+  align-items: $a;
+}
+@mixin align-self($a) {
+  -moz-align-self: $a;
+  -webkit-align-self: $a;
+  align-self: $a;
+}
+@mixin justify-content($a) {
+  -moz-box-pack: $a;
+  -ms-box-pack: $a;
+  -webkit-box-pack: $a;
+  box-pack: $a;
+  -moz-justify-content: $a;
+  -ms-justify-content: $a;
+  -webkit-justify-content: $a;
+  justify-content: $a;
+}
+@mixin justify-self($a) {
+  -moz-justify-self: $a;
+  -ms-justify-self: $a;
+  -webkit-justify-self: $a;
+  justify-self: $a;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -ms-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+@mixin placeholder-text {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+@mixin transition($p, $a) {
+  -webkit-transition: $p $a ease-in;
+  -moz-transition: $p $a ease-in;
+  -ms-transition: $p $a ease-in;
+  transition: $p $a ease-in;
+}
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin grayscale-element($value) {
+    -webkit-filter: #{"grayscale(#{$value})"};
+    -moz-filter: #{"grayscale(#{$value})"};
+    filter:#{"grayscale(#{$value})"};
+}
+
+@mixin highlight-emphasis {
+  &::-moz-selection {
+    background: transparentize($color-black,.01);
+    color: $color-white;
+  }
+  &::selection {
+    background: transparentize($color-black,.01);
+    color: $color-white;
+  }
+  & * {
+    &::-moz-selection {
+      background: transparentize($color-black,.01);
+      color: $color-white;
+    }
+    &::selection {
+      background: transparentize($color-black,.01);
+      color: $color-white;
+    }
+  }
+}
+
+@mixin background-emphasis {
+  background-color: $color-red-pink;
+  background-image: -webkit-linear-gradient(225deg, $color-yellow 0%, $color-red-pink 100%);
+  background-image: -moz-linear-gradient(225deg, $color-yellow 0%, $color-red-pink 100%);
+  background-image: -o-linear-gradient(225deg, $color-yellow 0%, $color-red-pink 100%);
+  background-image: linear-gradient(225deg, $color-yellow 0%, $color-red-pink 100%);
+  background-attachment: fixed;
+}
+
+
+@-webkit-keyframes love {0%, 100%{-webkit-transform:scale(1);transform:scale(1)}10%{-webkit-transform:scale(1.3);transform:scale(1.3)}25%{-webkit-transform:scale(1.2);transform:scale(1.2)}35%{-webkit-transform:scale(1.3);transform:scale(1.3)}}
+@keyframes love {0%, 100%{-webkit-transform:scale(1);transform:scale(1)}10%{-webkit-transform:scale(1.3);transform:scale(1.3)}25%{-webkit-transform:scale(1.2);transform:scale(1.2)}35%{-webkit-transform:scale(1.3);transform:scale(1.3)}}

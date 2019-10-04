@@ -1,22 +1,92 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,600|Montserrat:400,600");
+@-webkit-keyframes love {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  10% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); }
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  35% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); } }
 
-.App-logo {
-  height: 40vmin;
-}
+@keyframes love {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  10% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); }
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  35% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3); } }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-.App-link {
-  color: #09d3ac;
-}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #fcfcfc;
+  color: #333333;
+  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 1.44;
+  -webkit-font-smoothing: antialiased; }
+
+* {
+  box-sizing: border-box; }
+
+::-moz-selection {
+  background: #231f20;
+  color: #fdfdfd; }
+
+::selection {
+  background: #231f20;
+  color: #fdfdfd; }
+
+img {
+  max-width: 100%; }
