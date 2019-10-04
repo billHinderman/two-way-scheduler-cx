@@ -14,3 +14,10 @@ export const fetchUserByKey = (user_key) => {
   });
   return fetchUserByKey;
 }
+
+
+export const checkTriggerLogin = () => {
+  if(window.location.search.includes('login')) {
+    window.dispatchEvent(new Event('toggleLogin'));
+  }
+}
