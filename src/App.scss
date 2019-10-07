@@ -23,10 +23,11 @@
         "style/_headers"
 ;
 
-// Pages
-@import
-        "style/template/_user"
-;
-
 // Lib
 @import 'react-big-calendar/lib/sass/styles';
+
+// Pages
+@import
+        "style/template/_calendar",
+        "style/template/_user"
+;

@@ -1,0 +1,488 @@
+.user__element {
+  @include align-items(center);
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include display(flex);
+  background: $color-background-default;
+  margin: auto;
+  max-width: $m-l;
+  padding: $em;
+  width: 100%;
+}
+.user__element--with-shadow {
+  border-bottom-left-radius: $em-xxxxs;
+  border-bottom-right-radius: $em-xxxxs;
+  box-shadow: $shadow-standard;
+}
+.user__element--headline {
+  @include align-items(center);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include display(flex);
+  p {
+    font-weight: 300;
+    letter-spacing: .01875em;
+    line-height: 1.6;
+    margin: $em auto 0;
+    max-width: $m;
+    text-align: center;
+  }
+}
+.headline--user {
+  border-bottom: $em-xxxxs solid $color-grey-lighter;
+  border-radius: $em-xxxxs;
+  box-shadow: $shadow-standard;
+  padding: $em;
+  main {
+    width: 100%;
+  }
+  .headline__bio {
+    font-size: $em-m;
+    margin-top: $em-s;
+  }
+}
+.user__element--signup,
+.user__element--recover {
+  form {
+    max-width: $s;
+    width: 100%;
+  }
+  .button {
+    margin-top: $em-xl;
+    width: 100%;
+  }
+  .signup__facebook {
+    @include align-items(center);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include display(flex);
+    margin-bottom: $em;
+    max-width: $s;
+    width: 100%;
+    .text--descriptor {
+      margin: 0;
+      position: relative;
+      &:after,
+      &:before {
+        background: $color-grey-medium;
+        content: "";
+        display: block;
+        height: 1px;
+        position: absolute;
+        width: $em-xxxl;
+        top: $em-s;
+      }
+      &:after {
+        left: -1.3*$em-xxxl;
+      }
+      &:before {
+        right: -1.3*$em-xxxl;
+      }
+    }
+    .button--facebook {
+      margin: 0 auto $em;
+      width: 100%;
+    }
+  }
+  .input-figure + .input-figure {
+    margin-top: $em;
+  }
+  .g-recaptcha {
+    margin: $em-l auto 0;
+    & > div {
+      margin: auto;
+    }
+  }
+  .text--descriptor {
+    font-size: $em-m;
+    margin-top: $em-l;
+    text-align: center;
+    .link {
+      white-space: nowrap;
+    }
+  }
+  .text--descriptor + .text--descriptor {
+    margin-top: $em-s;
+  }
+  @media screen and (min-width: $m) {
+    padding: $em $em-xxxl $em-xxxl;
+  }
+}
+.template--user-edit .user__element {
+  max-width: $m;
+}
+.lightbox__main--login {
+  .text--descriptor {
+    font-size: $em-m;
+    text-align: center;
+    .link {
+      white-space: nowrap;
+    }
+  }
+  .text--descriptor + .text--descriptor {
+    margin-top: $em-s;
+  }
+}
+.user__element--edit {
+  @include align-items(center);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include display(flex);
+  @media screen and (min-width: $m) {
+    padding: $em $em-xxxl $em-xxxl;
+  }
+  form {
+    margin: auto;
+    width: 100%;
+  }
+  .button {
+    margin: $em-xl auto 0;
+    width: 100%;
+    @media screen and (min-width: $s-m) {
+      margin-right: 0;
+      width: auto;
+    }
+  }
+  .input-figure + .input-figure {
+    margin-top: $em;
+  }
+  .text--descriptor {
+    margin-top: $em-l;
+    text-align: center;
+  }
+  textarea {
+    height: $xs-double-padded;
+  }
+}
+.lightbox--login {
+  .lightbox__aside {
+    padding: $em;
+    height: 522px;
+    &.lightbox__aside--error {
+      height: 572px;
+    }
+    @media screen and (min-width: $m) {
+      padding: $em $em-xxxl $em-xxxl;
+    }
+    h2 {
+      margin-bottom: $em-xxl;
+    }
+    p + p {
+      margin-top: $em-s;
+    }
+  }
+  .lightbox__main {
+    @include align-items(center);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include display(flex);
+    padding: $em;
+    form {
+      max-width: $s;
+      width: 100%;
+    }
+    .button {
+      margin: $em-xl auto;
+      width: 100%;
+    }
+    .input-figure + .input-figure {
+      margin-top: $em;
+    }
+    .g-recaptcha {
+      margin: $em-l auto 0;
+      & > div {
+        margin: auto;
+      }
+    }
+    .signup__facebook {
+      @include align-items(center);
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include display(flex);
+      margin: $em 0;
+      max-width: $s;
+      width: 100%;
+      .text--descriptor {
+        margin: 0;
+        position: relative;
+        &:after,
+        &:before {
+          background: $color-grey-medium;
+          content: "";
+          display: block;
+          height: 1px;
+          position: absolute;
+          width: $em-xxxl;
+          top: $em-s;
+        }
+        &:after {
+          left: -1.3*$em-xxxl;
+        }
+        &:before {
+          right: -1.3*$em-xxxl;
+        }
+      }
+      .button--facebook {
+        margin: 0 auto $em;
+        width: 100%;
+      }
+    }
+    @media screen and (min-width: $m) {
+      padding: $em $em-xxxl $em-xxxl;
+    }
+  }
+}
+.sidebar__element--login {
+  @include align-items(center);
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include display(flex);
+  .link--subdued {
+    font-size: $em-s;
+  }
+  .button {
+    margin-left: $em;
+  }
+}
+.notification__author {
+  padding-right: $em-xxs;
+}
+.notification__notifiable {
+  padding-left: $em-xxs;
+}
+.notification__author,
+.notification__notifiable {
+  font-weight: 600;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.user__element--tabs {
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  border-bottom: $em-xxxxs solid $color-grey-lighter;
+  border-top-left-radius: $em-xxxxs;
+  border-top-right-radius: $em-xxxxs;
+  margin-top: $em;
+  max-width: $m;
+  padding: $em;
+  width: 100%;
+  .link--tab {
+    color: $color-black;
+    font-weight: 400;
+    font-size: $em-m;
+    text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      text-decoration: none;
+    }
+  }
+  .link--tab + .link--tab {
+    margin-left: $em;
+  }
+  .link--tab-active {
+    font-weight: 600;
+    color: $color-blue;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.user__element--comments-list {
+  @include align-items(flex-start);
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  max-width: $m;
+  padding: 0;
+  width: 100%;
+  .list-item--comments {
+    @include align-items(flex-start);
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    padding: $em;
+    width: 100%;
+  }
+  .comment__author {
+    display: block;
+    margin-bottom: $em-xxxs;
+    b {
+      font-weight: 600;
+    }
+  }
+  .comment__message {
+    font-size: $em;
+    font-weight: 300;
+    letter-spacing: .01875em;
+    line-height: 1.6;
+  }
+  .text--help {
+    display: block;
+    margin-top: $em-xxxs;
+  }
+}
+.user__element--sotws-list {
+  @include align-items(flex-start);
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  max-width: $m;
+  padding: 0;
+  width: 100%;
+  .list-item--sotws {
+    @include align-items(flex-start);
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    border-left: $em-xxxs solid;
+    padding: $em;
+    width: 100%;
+    &.list-item--sotws-pending {
+      border-left-color: $color-mustard;
+    }
+    &.list-item--sotws-approved {
+      border-left-color: $color-mint;
+    }
+    &.list-item--sotws-active {
+      border-left-color: $color-mint;
+    }
+    &.list-item--sotws-expired {
+      border-left-color: $color-mustard;
+    }
+    &.list-item--sotws-denied {
+      border-left-color: $color-red;
+    }
+  }
+  .sotw__info {
+    font-size: $em;
+    font-weight: 300;
+    letter-spacing: .01875em;
+    line-height: 1.6;
+  }
+  .sotw__link {
+    color: $color-grey-off;
+    font-size: $em-m;
+    vertical-align: middle;
+    svg {
+      height: $em-m;
+      width: $em-m;
+    }
+  }
+  .sotw__status {
+    font-size: $em-m;
+    margin: $em-xs 0 -1*$em -1*$em;
+    padding: $em-xs $em $em-xs;
+    width: calc(100% + 32px);
+    &.sotw__status--pending {
+      background: transparentize($color-mustard, .9);
+    }
+    &.sotw__status--approved {
+      background: transparentize($color-mint, .9);
+    }
+    &.sotw__status--active {
+      background: transparentize($color-mint, .9);
+    }
+    &.sotw__status--expired {
+      background: transparentize($color-mustard, .9);
+    }
+    &.sotw__status--denied {
+      background: transparentize($color-red, .9);
+    }
+  }
+  .text--help {
+    display: block;
+    margin-top: $em-xxxs;
+  }
+}
+.user__element--stories-list {
+  @include align-items(flex-start);
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  max-width: $m;
+  padding: 0;
+  width: 100%;
+  .list-item--stories {
+    padding: $em;
+    width: 100%;
+  }
+}
+.user__element--upvotes-list {
+  @include align-items(flex-start);
+  @include flex-direction(column);
+  @include justify-content(flex-start);
+  max-width: $m;
+  padding: 0;
+  width: 100%;
+  .list-item--upvotes {
+    @include align-items(flex-start);
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    padding: $em;
+    width: 100%;
+    .upvote__author {
+      display: block;
+      margin-bottom: $em-xxxs;
+      b {
+        font-weight: 600;
+      }
+    }
+    .upvote__message {
+      font-size: $em;
+      font-weight: 300;
+      letter-spacing: .01875em;
+      line-height: 1.6;
+    }
+    .text--help {
+      display: block;
+      margin-top: $em-xxxs;
+    }
+  }
+}
+.sidebar__element--profile-complete {
+  ul {
+    padding: $em-s $em-xs 0;
+  }
+  .profile-complete-element {
+    @include align-items(center);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    @include display(flex);
+    font-size: $em-s;
+  }
+  .profile-complete-element + .profile-complete-element {
+    padding-top: $em-xs;
+  }
+  s {
+    border-bottom: $em-xxxxs solid $color-mint;
+    color: $color-grey-off;
+    display: inline-block;
+    height: 0px;
+    line-height: $em-m;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    font-style: italic;
+    text-decoration: none;
+  }
+  svg {
+    height: $em;
+  }
+  .profile-complete-element--complete svg {
+    fill: transparentize($color-mint, .85);
+  }
+}
+.headline--user__actions {
+  @include align-items(flex-start);
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  @include display(flex);
+  width: 100%;
+  .actions__rcol {
+    @include align-items(flex-end);
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    @include display(flex);
+    .button + .button {
+      margin-top: $em-xxs;
+    }
+  }
+}

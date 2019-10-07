@@ -1,0 +1,386 @@
+.input-figure {
+  @include align-items(flex-start);
+  @include flex-direction(column-reverse);
+  @include justify-content(flex-start);
+  @include display(flex);
+  position: relative;
+  width: 100%;
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="text"],
+  input[type="url"],
+  input[type="datetime-local"],
+  textarea {
+    @include align-items(center);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include display(flex);
+    background: $color-white-true;
+    border: $em-xxxxs solid $color-grey-lighter;
+    border-radius: $em-xxxxs;
+    font-family: $text-sans;
+    font-size: $em;
+    letter-spacing: .01875em;
+    outline: none;
+    padding: $em-xs;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+  .input-figure__label {
+    color: $color-grey-off;
+    font-size: $em-s;
+    font-weight: 600;
+    margin-bottom: $em-xxs;
+    transition: color $transition-short;
+    .label__primary {
+      color: $color-black;
+      padding-right: $em-xxs;
+    }
+    .label__secondary {
+      font-weight: 400;
+    }
+  }
+}
+.textarea--remaining {
+  background: $color-white-true;
+  cursor: default;
+  font-size: $em-s;
+  bottom: $em-xxxs;
+  padding: $em-xxxs;
+  position: absolute;
+  right: $em-xxxs;
+  b {
+    font-weight: 600;
+  }
+}
+.input-figure--radio + .input-figure--radio {
+  margin-top: $em-xxs;
+}
+.input-figure__label.label--radio {
+  @include align-items(flex-start);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include display(flex);
+  cursor: pointer;
+  font-size: $em-m;
+  line-height: 1.6;
+  padding-left: 26px;
+  &:before {
+    background: $color-white-true;
+    border: 1px solid $color-grey-medium;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: $em-m-l;
+    left: 0;
+    position: absolute;
+    width: $em-m-l;
+  }
+}
+.input-figure__label.label--hidden {
+  left: -10000px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  top: auto;
+}
+
+.input-figure--password input[type="password"],
+.input-figure--password input[type="text"] {
+  padding-right: $em-xl;
+}
+.input-figure--password button {
+  @include align-items(center);
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include display(flex);
+  background: $color-white-true;
+  bottom: $em-xxxxs;
+  height: 34px;
+  position: absolute;
+  right: $em-xs;
+  svg {
+    color: $color-grey-medium;
+    height: $em-m;
+    width: $em-m;
+  }
+  &:hover svg {
+    color: $color-grey-off;
+  }
+}
+
+.input-figure--showing button {
+  svg {
+    color: $color-blue;
+  }
+  &:hover svg {
+    color: $color-blue-dark;
+  }
+}
+
+.input-figure--upvote {
+  margin: 0 $em 0 0;
+  transition: margin-top $transition-short;
+  width: auto;
+  button {
+    @include align-items(center);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include display(flex);
+    color: $color-blue;
+    position: relative;
+    svg {
+      height: $em;
+      transition: opacity $transition-short;
+      transition-delay: $transition-instant;
+      width: $em;
+    }
+    span {
+      display: block;
+      font-family: $text-display;
+      font-size: $em-s;
+      font-weight: 600;
+      margin: -1*$em-xxxs auto 0;
+      text-align: center;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &:hover button {
+    color: darken($color-blue, 10);
+  }
+  &:active button,
+  &:focus button {
+    color: $color-blue;
+  }
+}
+.input-figure--upvote-voted {
+  margin-top: -1*$em-s;
+  svg {
+    opacity: 0;
+  }
+}
+
+.input-figure--radio {
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:hover ~ .input-figure__label.label--radio:before {
+    border-color: darken($color-grey-medium,10);
+  }
+  input[type="radio"]:active ~ .input-figure__label.label--radio:before {
+    border-color: darken($color-grey-medium,15);
+    background: $color-grey-lightest;
+  }
+  input[type="radio"]:checked ~ .input-figure__label.label--radio:before {
+    border-color: $color-blue;
+  }
+  input[type="radio"]:checked ~ .input-figure__label.label--radio:after {
+    background: $color-blue-dark;
+    border-radius: 50%;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    content: "";
+    height: 12px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 12px;
+  }
+}
+
+.input--card {
+  background: $color-white-true;
+  border: $em-xxxxs solid $color-grey-lighter;
+  border-radius: $em-xxxxs;
+  font-family: $text-sans;
+  font-size: $em;
+  outline: none;
+  padding: $em-xs;
+  -webkit-appearance: none;
+  transition: background $transition-short, border-color $transition-short, color $transition-short;
+  width: 100%;
+}
+.input--card--complete {
+  background: transparentize($color-mint,.9);
+  border-color: $color-mint;
+  &:hover,
+  &:focus {
+    background: $color-white-true;
+    border-color: $color-grey-light;
+  }
+}
+.input--card--error {
+  background: transparentize($color-red,.9);
+  border-color: $color-red;
+  &:hover,
+  &:focus {
+    background: $color-white-true;
+    border-color: $color-grey-light;
+  }
+}
+
+.input-figure--checkbox {
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+    position: relative;
+    &:after {
+      background: $color-white-grey;
+      border: $em-xxxs solid $color-grey-lighter;
+      border-radius: $em-xl;
+      content: "";
+      display: block;
+      height: $em-l;
+      left: 6.68px;
+      position: absolute;
+      top: 4.68px;
+      transition: left $transition-short;
+      width: $em-l;
+    }
+    &:before {
+      background: $color-white-true;
+      border: $em-xxxs solid $color-grey-light;
+      border-radius: $em-xl;
+      content: "";
+      display: block;
+      height: $em-xl;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: background $transition-short;
+      width: 60px;
+    }
+    span {
+        @include align-items(center);
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include display(flex);
+        height: 37.59px;
+        padding-left: 72px;
+    }
+  }
+  input[type="checkbox"]:checked + label:after {
+    left: 30.696px;
+  }
+  input[type="checkbox"]:checked + label:before {
+    background: $color-mint;
+  }
+  input[type="checkbox"]:disabled + label {
+    color: $color-grey-medium;
+    cursor: not-allowed;
+    font-style: italic;
+  }
+}
+.input-figure--checkbox--small {
+  label {
+    font-size: $em-m;
+    &:after {
+      border: .75*$em-xxxxs solid $color-grey-lighter;
+      border-radius: $em-l;
+      height: $em;
+      left: 3.98px;
+      top: 3.38px;
+      width: $em;
+    }
+    &:before {
+      border: $em-xxxxs solid $color-grey-light;
+      border-radius: $em-l;
+      height: $em-l;
+      width: 40px;
+    }
+    span {
+        @include align-items(center);
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include display(flex);
+        height: 25.59px;
+        padding-left: 52px;
+    }
+  }
+
+  input[type="checkbox"]:checked + label:after {
+    left: 20.696px;
+  }
+}
+
+.input-figure--file-drop {
+  .input-figure--file-drop__file-drop {
+    border: $em-xxxxs dashed $color-grey-light;
+    cursor: pointer;
+    text-align: center;
+    padding: $em;
+    transition: border-color $transition-short;
+    margin: auto;
+    max-width: $s-m-double-padded;
+    width: 100%;
+    p + p {
+      margin-top: $em-xs;
+    }
+    svg {
+      color: $color-grey-light;
+    }
+    .button {
+      margin: auto;
+    }
+  }
+
+  .input-figure--file-drop__preview {
+    border: $em-xxxs dashed $color-grey-light;
+    text-align: center;
+    padding: $em;
+    transition: border-color $transition-short;
+    width: 100%;
+    img {
+      max-height: $s-double-padded;
+      max-width: $s-double-padded;
+    }
+    .button {
+      svg {
+        max-height: $em;
+      }
+      margin: auto;
+    }
+  }
+
+  &:hover .input-figure--file-drop__file-drop,
+  &:hover .input-figure--file-drop__preview {
+    border-color: $color-grey-medium;
+  }
+
+  .input-figure--file-drop__accept {
+    border-color: $color-mint !important;
+    background: transparentize($color-mint, .95);
+    .button {
+      background: darken($color-mint,12);
+    }
+  }
+  .input-figure--file-drop__reject {
+    border-color: $color-red !important;
+    background: transparentize($color-red, .95);
+    .button {
+      background: $color-red;
+    }
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $color-grey-medium;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $color-grey-medium;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $color-grey-medium;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $color-grey-medium;
+}

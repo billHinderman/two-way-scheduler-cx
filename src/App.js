@@ -41,6 +41,9 @@ function App() {
         <Switch>
           <Route path="/" exact component={StaticHome}/>
 
+          {/* Appointment */}
+          <Route path="/appointment/new" exact component={AppointmentNew}/>
+
           {/* Calendar */}
           <Route path="/calendar/edit" exact component={CalendarEdit}/>
 

@@ -19,14 +19,13 @@ class CalendarEdit extends Component {
 
   onSelectEmpty = (e) => {
     //todo: Change behavior based on first slot selected
-    console.log(e.slots);
     const addedEvents = [];
     e.slots.forEach((slot, index) => {
       if(index != e.slots.length - 1) {
         const addedEvent = {};
         addedEvent['start'] = slot;
         addedEvent['end'] = moment(slot).add(30, 'm').toDate();
-        addedEvent['title'] = 'Available';
+        addedEvent['title'] = 'available';
         addedEvents.push(addedEvent);
       }
     })
@@ -35,26 +34,37 @@ class CalendarEdit extends Component {
   }
 
   onSelectEvent = (e) => {
-    console.log(e);
     const filteredEvents = _.without(this.state.events, e)
     this.setState({events: filteredEvents});
   }
 
   render() {
+    const today = moment().minute(0);
+    const formats = {
+      eventTimeRangeFormat: ' '
+    }
     return (
       <div className="template template--calendar template--calendar-edit">
-      <Calendar
-        components={{ event: CalendarEvent}}
-        defaultView="week"
-        endAccessor="end"
-        events={this.state.events}
-        localizer={localizer}
-        startAccessor="start"
-        selectable={true}
+        <figure className="calendar__element calendar__element--with-shadow">
+          <Calendar
+            components={{event: CalendarEvent}}
+            defaultView="work_week"
+            drilldownView="agenda"
+            endAccessor="end"
+            events={this.state.events}
+            formats={formats}
+            localizer={localizer}
+            max={today.hour(21).add(28, 'd').toDate()}
+            min={today.hour(7).toDate()}
+            startAccessor="start"
+            selectable={true}
+            views={['work_week']}
+            timeslots={2}
 
-        onSelectSlot={this.onSelectEmpty}
-        onSelectEvent={this.onSelectEvent}
-      />
+            onSelectSlot={this.onSelectEmpty}
+            onSelectEvent={this.onSelectEvent}
+          />
+          </figure>
       </div>
     );
   }
