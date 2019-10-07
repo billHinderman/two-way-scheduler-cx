@@ -1252,10 +1252,25 @@ button.rbc-input::-moz-focus-inner {
 .rbc-day-slot .rbc-events-container {
   margin-right: 0; }
 
+.rbc-slot-selection {
+  background: #ffffff; }
+
 .rbc-day-slot .rbc-event {
-  background: #ffffff;
   border: none;
   border-radius: 0; }
+
+.rbc-day-slot .rbc-event[title=" : available"] {
+  background: #ffffff; }
+  .rbc-day-slot .rbc-event[title=" : available"]:hover {
+    border: 1.414px dashed #E5E2E2; }
+
+.rbc-day-slot .rbc-event[title*="history"] {
+  background: transparent;
+  background-image: linear-gradient(135deg, transparent 41.67%, #000000 41.67%, #000000 50%, transparent 50%, rgba(0, 0, 0, 0) 91.67%, #000000 91.67%, #000000 100%);
+  background-size: 8.49px 8.49px;
+  border-bottom: 1.414px solid #000000;
+  color: transparent;
+  cursor: not-allowed; }
 
 .user__element {
   -moz-align-items: center;

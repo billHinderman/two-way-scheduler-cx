@@ -23,13 +23,23 @@ class CalendarEdit extends Component {
     e.slots.forEach((slot, index) => {
       if(index != e.slots.length - 1) {
         const addedEvent = {};
-        addedEvent['start'] = slot;
-        addedEvent['end'] = moment(slot).add(30, 'm').toDate();
+        addedEvent['id'] = moment(slot).second(0).millisecond(0).toISOString();
+        addedEvent['start'] = moment(slot).second(0).millisecond(0).toDate();
+        addedEvent['end'] = moment(slot).second(0).millisecond(0).add(30, 'm').toDate();
         addedEvent['title'] = 'available';
         addedEvents.push(addedEvent);
       }
     })
-    const combinedEvents = _.uniqWith(this.state.events.concat(addedEvents), _.isEqual);
+    addedEvents.push({
+      id: moment().hour(0).minute(0).second(0).millisecond(0).toISOString(),
+      start: moment().hour(0).minute(0).second(0).millisecond(0).subtract(30,'d').toDate(),
+      end: moment().toDate(),
+      title: 'history'
+    })
+    let combinedEvents = this.state.events.concat(addedEvents);
+    console.log(combinedEvents);
+    combinedEvents = _.uniqBy(combinedEvents, 'id');
+    console.log(combinedEvents);
     this.setState({events: combinedEvents});
   }
 
@@ -56,8 +66,9 @@ class CalendarEdit extends Component {
             localizer={localizer}
             max={today.hour(21).add(28, 'd').toDate()}
             min={today.hour(7).toDate()}
-            startAccessor="start"
             selectable={true}
+            showMultiDayTimes={true}
+            startAccessor="start"
             views={['work_week']}
             timeslots={2}
 

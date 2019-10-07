@@ -26,8 +26,28 @@
 .rbc-day-slot .rbc-events-container {
   margin-right: 0;
 }
-.rbc-day-slot .rbc-event {
+
+.rbc-slot-selection {
   background: $color-white-true;
+}
+
+.rbc-day-slot .rbc-event {
   border: none;
   border-radius: 0;
+}
+
+.rbc-day-slot .rbc-event[title=" : available"] {
+  background: $color-white-true;
+  &:hover {
+    border: $em-xxxxs dashed $color-grey-light;
+  }
+}
+
+.rbc-day-slot .rbc-event[title*="history"] {
+  background: transparent;
+  background-image: linear-gradient(135deg, transparent 41.67%, #000000 41.67%, #000000 50%, transparent 50%, rgba(0,0,0,0) 91.67%, #000000 91.67%, #000000 100%);
+  background-size: 8.49px 8.49px;
+  border-bottom: $em-xxxxs solid $color-black-true;
+  color: transparent;
+  cursor: not-allowed;
 }
