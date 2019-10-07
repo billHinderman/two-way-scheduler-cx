@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Auth from 'j-toker'
 import createHistory from 'history/createBrowserHistory'
@@ -18,40 +18,42 @@ import './App.css';
 
 const history = createHistory();
 
+// Pages
+const AppointmentConfirm  = componentAsync(() => import('./app/pages/appointments/templates/appointment-confirm'))
+const AppointmentEdit  = componentAsync(() => import('./app/pages/appointments/templates/appointment-edit'))
+const AppointmentNew  = componentAsync(() => import('./app/pages/appointments/templates/appointment-new'))
+
 const CalendarEdit  = componentAsync(() => import('./app/pages/calendars/templates/calendar-edit'))
+
+const InterviewNew  = componentAsync(() => import('./app/pages/interviews/templates/interview-new'))
 
 const StaticHome  = componentAsync(() => import('./app/pages/static/templates/static-home'))
 
 const UserLogin  = componentAsync(() => import('./app/pages/user/templates/user-login'))
 const UserNew  = componentAsync(() => import('./app/pages/user/templates/user-new'))
 
-class App extends Component {
-  componentDidMount() {
-  }
+function App() {
+  return (
+    <Router history={history}>
+      <div className="app">
+      <main role="main" className="page-content">
+      <div>outside</div>
+        <Switch>
+          <Route path="/" exact component={StaticHome}/>
 
-  render() {
-    return (
-      <Router history={history}>
-        <div className="app">
-        <main role="main" className="page-content">
-        <div>outside</div>
-          <Switch>
-            <Route path="/" exact component={StaticHome}/>
+          {/* Calendar */}
+          <Route path="/calendar/edit" exact component={CalendarEdit}/>
 
-            {/* Calendar */}
-            <Route path="/calendar/edit" exact component={CalendarEdit}/>
+          {/* User */}
+          <RoutePublic path="/account/sign-up" exact component={UserNew}/>
+          <RoutePublic path="/account/log-in" exact component={UserLogin}/>
 
-            {/* User */}
-            <RoutePublic path="/account/sign-up" exact component={UserNew}/>
-            <RoutePublic path="/account/log-in" exact component={UserLogin}/>
-
-            {/* Static */}
-          </Switch>
-        </main>
-        </div>
-      </Router>
-    );
-  }
+          {/* Static */}
+        </Switch>
+      </main>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

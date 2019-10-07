@@ -70,13 +70,9 @@ class UserLogin extends Component {
     return (
       <div className="template template--user template--user-new">
         <Helmet>
-          <title>Sign Up | Podcast Campfire</title>
-          <meta property="og:title" content="Sign Up | Podcast Campfire"/>
+          <title>Log In</title>
+          <meta property="og:title" content="Log In"/>
         </Helmet>
-        <figure className="user__element user__element--headline">
-          <h2 className="headline__title"><b>Join Podcast Campfire</b></h2>
-          <p>Podcast Campfire is a community of podcast creators, enthusiasts, and fans, brought together to share news, updates, and jobs in the medium we all love.</p>
-        </figure>
         <figure className="user__element user__element--with-shadow user__element--signup">
           <form noValidate onSubmit={this.onLoginClick}>
             <InputEmail
@@ -93,9 +89,6 @@ class UserLogin extends Component {
             />
             <button type={`submit`} className="button">Sign in</button>
           </form>
-          <p className="text--descriptor">Not a Podcast Campfire member? <button className="link link--inline" onClick={this.onSignupClick}>Sign up</button>!</p>
-          <p className="text--descriptor">Forgot your password? <button className="link link--inline" onClick={this.onRecoverClick}>Recover your account</button>.</p>
-
         </figure>
       </div>
     );

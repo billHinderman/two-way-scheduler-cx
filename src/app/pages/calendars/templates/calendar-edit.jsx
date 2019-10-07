@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
+
+
+import CalendarEvent from '../atoms/calendar-event'
+
+
 const localizer = momentLocalizer(moment)
 
 class CalendarEdit extends Component {
@@ -13,6 +18,7 @@ class CalendarEdit extends Component {
   }
 
   onSelectEmpty = (e) => {
+    //todo: Change behavior based on first slot selected
     console.log(e.slots);
     const addedEvents = [];
     e.slots.forEach((slot, index) => {
@@ -36,14 +42,16 @@ class CalendarEdit extends Component {
 
   render() {
     return (
-      <div className="template template--user template--user-new">
+      <div className="template template--calendar template--calendar-edit">
       <Calendar
+        components={{ event: CalendarEvent}}
         defaultView="week"
         endAccessor="end"
         events={this.state.events}
         localizer={localizer}
         startAccessor="start"
         selectable={true}
+
         onSelectSlot={this.onSelectEmpty}
         onSelectEvent={this.onSelectEvent}
       />

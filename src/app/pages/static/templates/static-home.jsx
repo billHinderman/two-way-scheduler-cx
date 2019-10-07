@@ -10,9 +10,8 @@ class StaticHome extends Component {
   render() {
     console.log(Auth);
     return (
-      <div className="template template--user template--user-new">
+      <div className="template template--static template--static-home">
         {Auth.user.email}
-        <div>asdfs</div>
       </div>
     );
   }

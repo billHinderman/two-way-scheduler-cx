@@ -82,13 +82,9 @@ class UserNew extends Component {
     return (
       <div className="template template--user template--user-new">
         <Helmet>
-          <title>Sign Up | Podcast Campfire</title>
-          <meta property="og:title" content="Sign Up | Podcast Campfire"/>
+          <title>Sign Up</title>
+          <meta property="og:title" content="Sign Up"/>
         </Helmet>
-        <figure className="user__element user__element--headline">
-          <h2 className="headline__title"><b>Join Podcast Campfire</b></h2>
-          <p>Podcast Campfire is a community of podcast creators, enthusiasts, and fans, brought together to share news, updates, and jobs in the medium we all love.</p>
-        </figure>
         <figure className="user__element user__element--with-shadow user__element--signup">
           <form noValidate onSubmit={this.onSubmit}>
             <InputText
@@ -120,7 +116,6 @@ class UserNew extends Component {
               onChange={this.onChange}
             />
             <button type={`submit`} className="button" disabled={this.isSubmittable()}>Create account</button>
-            <p className="text--descriptor">Already have an account? <button className="link link--inline" onClick={this.onToggleLogin}>Log in</button>!</p>
           </form>
         </figure>
       </div>

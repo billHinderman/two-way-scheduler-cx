@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 
 import Auth from 'j-toker'
 
-class AppointmentNew extends Component {
+class AppointmentEdit extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="template template--appointment template--appointment-new">
+      <div className="template template--appointment template--appointment-edit">
 
       </div>
     );
   }
 }
 
-export default AppointmentNew;
+export default AppointmentEdit;
