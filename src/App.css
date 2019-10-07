@@ -532,54 +532,6 @@ button {
 .input-figure--showing button:hover svg {
   color: #0389d6; }
 
-.input-figure--upvote {
-  margin: 0 16px 0 0;
-  transition: margin-top 0.3s;
-  width: auto; }
-  .input-figure--upvote button {
-    -moz-align-items: center;
-    -webkit-align-items: center;
-    align-items: center;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -moz-box-pack: center;
-    -ms-box-pack: center;
-    -webkit-box-pack: center;
-    box-pack: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    display: flex;
-    color: #019cea;
-    position: relative; }
-    .input-figure--upvote button svg {
-      height: 16px;
-      transition: opacity 0.3s;
-      transition-delay: 0.1s;
-      width: 16px; }
-    .input-figure--upvote button span {
-      display: block;
-      font-family: "Montserrat", Georgia, serif;
-      font-size: 11.312px;
-      font-weight: 600;
-      margin: -2.828px auto 0;
-      text-align: center; }
-    .input-figure--upvote button:focus {
-      outline: none; }
-  .input-figure--upvote:hover button {
-    color: #017ab7; }
-  .input-figure--upvote:active button,
-  .input-figure--upvote:focus button {
-    color: #019cea; }
-
-.input-figure--upvote-voted {
-  margin-top: -11.312px; }
-  .input-figure--upvote-voted svg {
-    opacity: 0; }
-
 .input-figure--radio input[type="radio"] {
   display: none; }
 
@@ -605,32 +557,6 @@ button {
   position: absolute;
   top: 5px;
   width: 12px; }
-
-.input--card {
-  background: #ffffff;
-  border: 1.414px solid #eeeeee;
-  border-radius: 1.414px;
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  outline: none;
-  padding: 8px;
-  -webkit-appearance: none;
-  transition: background 0.3s, border-color 0.3s, color 0.3s;
-  width: 100%; }
-
-.input--card--complete {
-  background: rgba(0, 194, 59, 0.1);
-  border-color: #00c23b; }
-  .input--card--complete:hover, .input--card--complete:focus {
-    background: #ffffff;
-    border-color: #E5E2E2; }
-
-.input--card--error {
-  background: rgba(255, 13, 0, 0.1);
-  border-color: #ff0d00; }
-  .input--card--error:hover, .input--card--error:focus {
-    background: #ffffff;
-    border-color: #E5E2E2; }
 
 .input-figure--checkbox input[type="checkbox"] {
   display: none; }
@@ -730,52 +656,6 @@ button {
 .input-figure--checkbox--small input[type="checkbox"]:checked + label:after {
   left: 20.696px; }
 
-.input-figure--file-drop .input-figure--file-drop__file-drop {
-  border: 1.414px dashed #E5E2E2;
-  cursor: pointer;
-  text-align: center;
-  padding: 16px;
-  transition: border-color 0.3s;
-  margin: auto;
-  max-width: 416px;
-  width: 100%; }
-  .input-figure--file-drop .input-figure--file-drop__file-drop p + p {
-    margin-top: 8px; }
-  .input-figure--file-drop .input-figure--file-drop__file-drop svg {
-    color: #E5E2E2; }
-  .input-figure--file-drop .input-figure--file-drop__file-drop .button {
-    margin: auto; }
-
-.input-figure--file-drop .input-figure--file-drop__preview {
-  border: 2.828px dashed #E5E2E2;
-  text-align: center;
-  padding: 16px;
-  transition: border-color 0.3s;
-  width: 100%; }
-  .input-figure--file-drop .input-figure--file-drop__preview img {
-    max-height: 224px;
-    max-width: 224px; }
-  .input-figure--file-drop .input-figure--file-drop__preview .button {
-    margin: auto; }
-    .input-figure--file-drop .input-figure--file-drop__preview .button svg {
-      max-height: 16px; }
-
-.input-figure--file-drop:hover .input-figure--file-drop__file-drop,
-.input-figure--file-drop:hover .input-figure--file-drop__preview {
-  border-color: #ABABAB; }
-
-.input-figure--file-drop .input-figure--file-drop__accept {
-  border-color: #00c23b !important;
-  background: rgba(0, 194, 59, 0.05); }
-  .input-figure--file-drop .input-figure--file-drop__accept .button {
-    background: #008528; }
-
-.input-figure--file-drop .input-figure--file-drop__reject {
-  border-color: #ff0d00 !important;
-  background: rgba(255, 13, 0, 0.05); }
-  .input-figure--file-drop .input-figure--file-drop__reject .button {
-    background: #ff0d00; }
-
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #ABABAB; }
@@ -791,6 +671,36 @@ button {
 :-moz-placeholder {
   /* Firefox 18- */
   color: #ABABAB; }
+
+select {
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -moz-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -moz-box-pack: flex-start;
+  -ms-box-pack: flex-start;
+  -webkit-box-pack: flex-start;
+  box-pack: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  display: flex;
+  background: #ffffff;
+  border: 1.414px solid #eeeeee;
+  border-radius: 1.414px;
+  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: .01875em;
+  outline: none;
+  padding: 8px;
+  -webkit-appearance: none;
+  width: 100%; }
+  select option {
+    font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif; }
 
 .rbc-btn {
   color: inherit;
@@ -1344,8 +1254,7 @@ button.rbc-input::-moz-focus-inner {
 
 .rbc-day-slot .rbc-event {
   background: #ffffff;
-  border-color: #ABABAB;
-  border-width: 0px 1.414px;
+  border: none;
   border-radius: 0; }
 
 .user__element {

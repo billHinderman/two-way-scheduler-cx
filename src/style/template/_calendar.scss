@@ -28,7 +28,6 @@
 }
 .rbc-day-slot .rbc-event {
   background: $color-white-true;
-  border-color: $color-grey-medium;
-  border-width: 0px $em-xxxxs;
+  border: none;
   border-radius: 0;
 }

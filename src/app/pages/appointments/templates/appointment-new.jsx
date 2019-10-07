@@ -84,7 +84,7 @@ class AppointmentNew extends Component {
               <option key={talent_option.key} value={talent_option.key}>{talent_option.name}</option>
             )}
           </InputSelect>
-          <button type={`submit`} className="button" disabled={this.isSubmittable()}>Create interview</button>
+          <button type={`submit`} className="button" disabled={this.isSubmittable()}>Create appointment</button>
         </form>
       </figure>
       </div>
